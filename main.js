@@ -14,7 +14,7 @@ let cantidad = 0;
 let comida = "0";
 
 while(salida){
-    let Nusuario = prompt("Bienvenido al BufetJS-2023!!! <Ingreso de PEDIDO> \n\nSocios       - <Ingrese su numero de socio>\nInvitados   - <Ingrese 0>\nSalir            - <Presione X>\n\n\nSocios 20% de descuento \n\n\n");
+    let Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nSocios       - <Ingrese su numero de socio>\nInvitados   - <Ingrese 0>\nSalir            - <Presione X>\n\n\nSocios 20% de descuento \n\n\n");
     if (Nusuario == "x" || Nusuario == "X"){
         salida=false;
     } else {
