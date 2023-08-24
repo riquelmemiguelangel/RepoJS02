@@ -45,7 +45,14 @@ while(salida){
 }       
 
 
-function(GuardaTotal){
+//function(GuardaTotal){
     
-}
+//}
 
+
+// cuando esta todo cargado se le pide datos al usuario
+//window.addEventListener('load')
+//, function() {
+//    solicitarDatos();
+//}
+//)
