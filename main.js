@@ -4,14 +4,15 @@ const nomyape1= "Manuel Sanmartin";
 const pass1 = "1234";
 
 //datos de usuario2
-let id_usuario2 = 2;
-let nombre_completo2 = "Juan Belgrano";
-let pass2 = "1234";
+const id_usuario2 = 2;
+const nombre_completo2 = "Juan Belgrano";
+const pass2 = "1234";
 
 let apeynom ="";
 let salida = true
 let cantidad = 0;
 let comida = "0";
+let acu_total = 0;
 
 while(salida){
     let Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nSocios       - <Ingrese su numero de socio>\nInvitados   - <Ingrese 0>\nSalir            - <Presione X>\n\n\nSocios 20% de descuento \n\n\n");
@@ -43,4 +44,8 @@ while(salida){
         //let password = prompt ("Ingrese su contraseña").trim();
 }       
 
+
+function(GuardaTotal){
+    
+}
 
