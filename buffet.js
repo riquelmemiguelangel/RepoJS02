@@ -22,27 +22,50 @@ while(salida){
         if (Nusuario == null || Nusuario == undefined){
             Nusuario = "vacio";
         }
-            switch(Nusuario){
-                case "0":
-                    apeynom=prompt("Ingrese su nombre y apellido"); 
-                    break;
-                case "1":
-                    let password = prompt ("Ingrese su contraseña").trim();
-                    if(password === pass1){
-                        alert("key");
-                    }else{
-                        alert("nNNNOO");
-                    }
-                    break;
-                case "2":
-                    break;
-                case "vacio" :
-                    break;
-            }
 
+        apeynom= DatoCliente(Nusuario);
+        switch(apeynom){
+            case "NO":
+                alert("No existe ese Numero de Cliente");
+                break;
+            case "NOPASS":
+                alert("No es la contraseña correcta");
+                break;
+            default:
+                alert("Bienvenido " + apeynom);
+        }
     }  
         //let password = prompt ("Ingrese su contraseña").trim();
 }       
+function DatoCliente(idusuario){
+    let password
+    switch(idusuario){
+        case "0":
+            apeynom=prompt("Ingrese su nombre y apellido"); 
+            break;
+        case "1":
+             password = prompt ("Ingrese su contraseña").trim();
+            if(password === pass1){
+                return nomyape1;
+            }else{
+                return "NOPASS";
+            }
+            break;
+        case "2":
+             password = prompt ("Ingrese su contraseña").trim();
+            if(password === pass2){
+                return nomyape2;
+            }else{
+                return "NOPASS";
+            }
+
+            break;
+        case "vacio" :
+            break;
+        default:
+            return"NO"
+    }
+}
 
 
 //function(GuardaTotal){
