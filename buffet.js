@@ -25,6 +25,7 @@ function sistema(){
         let Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nSocios       - <Ingrese su numero de socio>\nInvitados   - <Ingrese 0>\nSalir            - <Presione X>\n\n\nSocios 20% de descuento \n\n\n");
         if (Nusuario == "x" || Nusuario == "X"){
             salida=false;
+            salidaComida=false;
         } else {
             if(Nusuario==undefined){
                 //alert("es indefenido"); 
@@ -51,7 +52,7 @@ function sistema(){
 
         while(salidaComida){
             let comida;
-            comida =prompt("Bienvenido " + apeynom+"\n\nSeleccione su comida\n\n1. Hamburguesa ($ 850)\n2. Pancho ($ 700)\n3- Empanada ($ 800)\n4. Sin comida\n5. Continuar\nx. Cancela pedido");
+            comida =prompt("Bienvenido " + apeynom+"\n\nSeleccione su comida\n\n1. Hamburguesa ($ 850)\n2. Pancho ($ 700)\n3. Empanada ($ 800)\n4. Continuar\nx. Cancela pedido");
             salidaComida= armadocomida(comida);
         }
         salidaComida=true;
@@ -59,12 +60,13 @@ function sistema(){
 
         while(salidaBebida){
             let bebida;
-            bebida= prompt("seleccione su bebida\n1. Naranja $450\n2. Agua     $400\n3. Gaseosa  $600\n4. Sin Bebida\n5. Continuar\nx. Cancela el pedido");
+            bebida= prompt("seleccione su bebida\n1. Naranja ($450)\n2. Agua     ($400)\n3. Gaseosa  ($600)\n4. Continuar\nx. Cancela el pedido");
             salidaBebida=armadobebida(bebida);
         }
         salidaBebida=true;
+        
         if(acu_total==0){
-            alert(apeynom +" Sin compra");
+            alert("Cliente "+apeynom +" NO realizo Pedido");
         }else{
             if(descuento){
                 acu_total=acu_total-(acu_total*20/100);
@@ -72,6 +74,7 @@ function sistema(){
             MensajeComida="\nPedido de Cliente: "+apeynom+"\n"+MensajeComida;
             alert(MensajeComida +"\n\nTotal $"+acu_total);
             acu_total=0;
+            MensajeComida="";
         }   
 
 
@@ -99,9 +102,7 @@ function armadobebida(caso){
             acu_total=  acu_total + 600;
             return true;
             break;
-        case"4":
-            break;
-        case "5":
+        case "4":
             //salidaBebida=true;
             return false;
             break;
@@ -124,9 +125,7 @@ function armadocomida(caso){
             acu_total=  acu_total + 800;
             return true;
             break;
-        case"4":
-            break;
-        case "5":
+        case "4":
             salidaBebida=true;
             return false;
             break;
@@ -144,7 +143,7 @@ function armadocomida(caso){
 function DatoCliente(idusuario){
     let password;
     switch(idusuario){
-        case "3":
+        case "0":
             let invitado=prompt("Ingrese su nombre y apellido"); 
             descuento=false;
             return invitado;
@@ -152,6 +151,7 @@ function DatoCliente(idusuario){
         case "1":
              password = prompt ("Ingrese su contraseña").trim();
             if(password === pass1){
+                descuento=true;
                 return nomyape1;
             }else{
                 return "NOPASS";
@@ -160,6 +160,7 @@ function DatoCliente(idusuario){
         case "2":
              password = prompt ("Ingrese su contraseña").trim();
             if(password === pass2){
+                descuento=true;
                 return nomyape2;
             }else{
                 return "NOPASS";
