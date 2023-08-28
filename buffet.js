@@ -19,7 +19,7 @@ let descuento = true;
 
 //Variables let para mensajes
 let MensajeComida ="";
-sistema();
+//sistema();
 function sistema(){
     while(salida){
         let Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nSocios       - <Ingrese su numero de socio>\nInvitados   - <Ingrese 0>\nSalir            - <Presione X>\n\n\nSocios 20% de descuento \n\n\n");
@@ -178,7 +178,6 @@ function DatoCliente(idusuario){
 
 
 // cuando esta todo cargado se le pide datos al usuario
-window.addEventListener('load'), function() {
+window.addEventListener('load', function() {
      sistema();
-}
-//)
+});
